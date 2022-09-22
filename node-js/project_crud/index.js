@@ -59,9 +59,23 @@ app.post("/addemployee", (req, res) => {
     var sql = "SET @EmpID = ?; SET @Name = ?; SET @EmpCode = ?; SET @Salary = ?; \
     CALL EmployeeAddOrEdit(@EmpID, @Name, @EmpCode, @Salary);";
     mysqlConnection.query(sql, [emp.EmpID, emp.Name, emp.EmpCode, emp.Salary], (err, rows, fields) => {
-        if(!err) {
-            res.send(rows);
-        } else console.log(err);
+        if(!err) rows.forEach(element => {
+            if(element.constructor == Array)
+            res.send("Employee Id of the inserted employee is : "+ element[0].emp_id);    
+        });
+        else console.log(err);
+    })
+})
+
+//Update Employee
+app.put("/addemployee", (req, res) => {
+    let emp = req.body;
+    var sql = "SET @EmpID = ?; SET @Name = ?; SET @EmpCode = ?; SET @Salary = ?; \
+    CALL EmployeeAddOrEdit(@EmpID, @Name, @EmpCode, @Salary);";
+    mysqlConnection.query(sql, [emp.EmpID, emp.Name, emp.EmpCode, emp.Salary], (err, rows, fields) => {
+        if(!err) 
+            res.send("Employee updated successfully!")
+        else console.log(err);
     })
 })
 
