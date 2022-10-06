@@ -1,0 +1,14 @@
+{
+  "name": "e-commerce_microservice_application",
+  "version": "1.0.0",
+  "description": "Ecommerce Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sunil Sahu",
+  "license": "ISC",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  }
+}
