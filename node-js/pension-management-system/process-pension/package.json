@@ -1,7 +1,7 @@
 {
-  "name": "product-service",
+  "name": "process-pension",
   "version": "1.0.0",
-  "description": "Product Application",
+  "description": "Pension process module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,11 +9,8 @@
   "author": "Sunil Sahu",
   "license": "ISC",
   "dependencies": {
-    "amqplib": "^0.10.3",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.6.2",
     "nodemon": "^2.0.20"
   }
 }
