@@ -14,7 +14,6 @@ mongoose.connect(
   },
   () => {
     console.log(`order service DB  Connected`);
-    // console.log(pro);
   }
 );
 async function connect() {
