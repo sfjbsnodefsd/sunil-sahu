@@ -19,9 +19,8 @@ mongoose.connect(
 
   app.get("/getPensionerDetails/:aadharNumber", async (req, res) => {
         const aadharNumber = req.params.aadharNumber;
-        console.log(aadharNumber);
         const pensioner = await PensionerDetail.findOne({ aadharNumber });
-      return res.json({pensioner: pensioner});
+      return res.json({pensioner});
  
   });
 
