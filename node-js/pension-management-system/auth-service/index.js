@@ -53,7 +53,6 @@ app.post("/auth/login", async (req, res) => {
 
   const user = await User.findOne({ aadharNumber });
   const pensioner = await PensionerDetail.findOne({ aadharNumber });
-  console.log(pensioner.name);
   if (!user) {
     return res.json({ sucess: 404, message: "User dose not exist" });
   } else {

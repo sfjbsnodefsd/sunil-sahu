@@ -1,0 +1,28 @@
+{
+    "users": [
+    {
+      "name": "Nishant",
+      "age": 32,
+      "gender": "Male",
+      "id": 1
+    },
+    {
+      "name": "Nishant",
+      "age": "32",
+      "gender": "Male",
+      "id": 2
+    },
+    {
+      "name": "Peter",
+      "age": "30",
+      "gender": "Male",
+      "id": 3
+    },
+    {
+      "name": "Vikram",
+      "age": "27",
+      "gender": "Male",
+      "id": 4
+    }
+  ]
+}
