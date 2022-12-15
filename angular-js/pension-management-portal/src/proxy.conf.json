@@ -1,0 +1,12 @@
+[
+    {
+    "context": "/auth/*",
+    "target": "http://localhost:5000",
+    "secure": false
+    },
+    {
+    "context": "/processPension/*",
+    "target": "http://localhost:5002",
+    "secure": false
+    }
+]
