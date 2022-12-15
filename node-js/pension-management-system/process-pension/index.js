@@ -3,14 +3,20 @@ const app = express();
 const got  = require("axios");
 const mongoose = require("mongoose");
 const isAuthenticated = require("../isAuthenticated");
+const cors = require('cors');
+
 
 app.use(express.json());
+app.use(cors({
+    origin: '*'
+}));
 
-app.get("/processPension", isAuthenticated, async (req, resp) => {
-    const { aadharNumber } = req.body;
+app.get("/processPension/:aadharNumber", isAuthenticated, async (req, resp) => {
+    const aadharNumber = req.params.aadharNumber;
     const url = "http://localhost:5001/getPensionerDetails/"+ aadharNumber;
     got.get(url, {responseType: 'json'}).then(res => {
         const pensionerDetail = res.data;
+        console.log(pensionerDetail);
         let salaryEarned = pensionerDetail.pensioner.salaryEarned;
         let allowances = pensionerDetail.pensioner.allowances;
         let bankType = pensionerDetail.pensioner.bankDetails.bankType;
